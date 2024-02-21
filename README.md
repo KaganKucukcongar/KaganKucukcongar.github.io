@@ -13,7 +13,6 @@
     <section class="hakkimda">
       <h2>Hakkımda</h2>
       <p>Ben, Python, C# ve Java'da ileri düzey, JavaScript ve WordPress'te orta düzey ve HTML ve CSS'de temel düzeyde yetkinliğe sahip bir yazılımcıyım. Aynı zamanda Photoshop ve After Effects programlarını da kullanıyorum.</p>
-      <p>Bu sayfada, becerilerim ve deneyimlerim hakkında daha fazla bilgi edinebilirsiniz.</p>
     </section>
     <section class="beceriler">
       <h2>Becerilerim</h2>
