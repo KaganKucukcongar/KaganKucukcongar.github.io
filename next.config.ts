@@ -6,7 +6,6 @@ const config: NextConfig = {
   images: { unoptimized: true },
   poweredByHeader: false,
   productionBrowserSourceMaps: false,
-  transpilePackages: ["three"],
   outputFileTracingRoot: process.cwd(),
 };
 

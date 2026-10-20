@@ -8,17 +8,33 @@ import "@/styles/globals.css";
 const display = localFont({
   src: [
     {
-      path: "../../node_modules/@fontsource-variable/space-grotesk/files/space-grotesk-latin-ext-wght-normal.woff2",
-      weight: "500 700",
+      path: "../../node_modules/@fontsource-variable/manrope/files/manrope-latin-ext-wght-normal.woff2",
+      weight: "400 800",
       style: "normal",
     },
     {
-      path: "../../node_modules/@fontsource-variable/space-grotesk/files/space-grotesk-latin-wght-normal.woff2",
-      weight: "500 700",
+      path: "../../node_modules/@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2",
+      weight: "400 800",
       style: "normal",
     },
   ],
   variable: "--font-display",
+  display: "swap",
+});
+const exhibit = localFont({
+  src: [
+    {
+      path: "../../node_modules/@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-ext-wght-normal.woff2",
+      weight: "400 800",
+      style: "normal",
+    },
+    {
+      path: "../../node_modules/@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-wght-normal.woff2",
+      weight: "400 800",
+      style: "normal",
+    },
+  ],
+  variable: "--font-exhibit",
   display: "swap",
 });
 const body = localFont({
@@ -57,17 +73,17 @@ const mono = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — Creative Engineering`,
-    template: `%s | ${site.name}`,
+    default: `${site.name} — The Open Lab`,
+    template: `%s | The Open Lab`,
   },
   description: site.description,
   alternates: { canonical: "/" },
-  icons: { icon: "/k.png" },
+  icons: { icon: "/mark.svg" },
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: site.name,
-    title: `${site.name} — Creative Engineering`,
+    siteName: "The Open Lab",
+    title: `${site.name} — The Open Lab`,
     description: site.description,
     url: "/",
     images: [
@@ -75,29 +91,28 @@ export const metadata: Metadata = {
         url: "/social.png",
         width: 1200,
         height: 630,
-        alt: "Kağan Küçükçongar — Building things that go beyond ideas.",
+        alt: "The Open Lab — Kağan Küçükçongar. Software, AI, experiments.",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — Creative Engineering`,
+    title: `${site.name} — The Open Lab`,
     description: site.description,
     images: ["/social.png"],
   },
 };
 export const viewport: Viewport = {
-  themeColor: "#0B0D12",
-  colorScheme: "dark",
+  themeColor: "#F0ECE3",
+  colorScheme: "light",
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
       lang="en"
-      className={`${display.variable} ${body.variable} ${mono.variable}`}
+      className={`${display.variable} ${exhibit.variable} ${body.variable} ${mono.variable}`}
     >
       <body>
         <a className="skip-link" href="#main">

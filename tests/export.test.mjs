@@ -88,3 +88,24 @@ test("exported project links have matching static routes", async () => {
     }
   }
 });
+
+test("the exported identity uses The Open Lab and excludes the retired visual system", async () => {
+  const html = await readFile(resolve(root, "index.html"), "utf8");
+  assert.ok(html.includes("The Open Lab"));
+  assert.ok(html.includes("KAĞAN"));
+  assert.ok(html.includes("LANGUAGE") && html.includes("SIGNAL"));
+  assert.ok(
+    html.includes("CASE") && html.includes("003") && html.includes("005"),
+  );
+  for (const file of (await filesAt(root)).filter((file) =>
+    [".html", ".js", ".css", ".svg"].includes(extname(file)),
+  )) {
+    assert.equal(
+      /#D7FF72|#9276FF|Building things that go beyond|Abstract interconnected chrome rings|Connected by curiosity/i.test(
+        await readFile(file, "utf8"),
+      ),
+      false,
+      file,
+    );
+  }
+});

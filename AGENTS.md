@@ -1,14 +1,13 @@
-# Codex instructions: personal portfolio redesign
+# The Open Lab — repository instructions
 
-Before editing application code, read:
-1. `docs/BRIEF.md`
-2. `docs/CONTENT.md`
-3. `docs/DESIGN.md`
+Read `docs/BRIEF.md`, `docs/CONTENT.md`, and `docs/DESIGN.md` before application changes. These documents define the current art direction: **The Open Lab**, an interactive personal experiment bench and project archive.
 
-This repository currently deploys a live static portfolio from `main`, including `index.html`, `k.png`, and `CNAME`. **Do not delete or overwrite the live site until the replacement is implemented, tested, and explicitly approved.** Work on the feature branch and propose changes through a pull request.
+Preserve the published `main` branch and the original root `index.html`, `k.png`, and `CNAME` byte-for-byte. Work on `codex/portfolio-redesign` and update PR #2. Do not merge, deploy, change Pages settings, or change the domain without explicit owner approval.
 
-Goal: implement a distinctive, high-performance, accessible 3D personal portfolio with Next.js, TypeScript, Tailwind CSS, React Three Fiber/Three.js, and Motion. Two completed projects may have public case studies: BOR and AI-Powered IDS. All other work is locked and anonymized. Never invent credentials, dates, technology stacks, screenshots, repository links, or releases.
+The owner's name is the homepage's main typographic element. The signature interaction is a switchable LANGUAGE / SIGNAL study connected to BOR and AI-Powered IDS. Use warm paper, deep ink, signal orange, industrial stone, and muted steel. Build deliberate light/dark compositions, distinct exhibits, and sealed anonymous research files. Avoid generic slogans, repeated cards, decorative 3D sculpture, glows, rounded SaaS panels, or repeated section labels/rules.
 
-GitHub Pages hosts static output, so configure Next.js static export (`output: 'export'`) and use a compatible GitHub Actions Pages deployment workflow. Ensure static routes, assets, and the site's canonical root URL work. Preserve the existing CNAME until the owner approves a domain change.
+Only BOR and AI-Powered IDS have public case-study routes. All other projects remain anonymous CASE 003/004/005. Do not put internal names, details, links, screenshots, release dates, progress percentages, hidden routes, or private metadata in source that ships to the client. Never invent BOR syntax, real security data, model results, award dates/categories, stacks, credentials, or repositories. Label conceptual graphics honestly.
 
-Read the existing site before implementing. First outline the approach, then implement the complete website. Run typecheck, lint, tests where present, and production build. Document how to test and publish. Do not merge or deploy without approval.
+Keep Next.js App Router, strict TypeScript, Tailwind, local optimized fonts, Motion where purposeful, semantic HTML, keyboard/touch behavior, and static export for username GitHub Pages. SVG/DOM and CSS spatial layers implement the current signature; a WebGL dependency is unnecessary. Reduced motion, mobile, data saving, and no-JavaScript content must remain designed and usable.
+
+Run lint, strict typecheck, production build, export/privacy tests, and browser/accessibility tests. Review new desktop/mobile screenshots before updating PR #2. Update the design and publishing documentation when behavior changes. Publishing remains a separate, approved manual workflow on `main`.

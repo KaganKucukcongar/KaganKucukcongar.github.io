@@ -1,326 +1,232 @@
-import {
-  ArrowDown,
-  ArrowDownRight,
-  ArrowUpRight,
-  Award,
-  LockKeyhole,
-  Sparkles,
-  Asterisk,
-} from "lucide-react";
-import { HeroArt } from "@/components/three/hero-art";
-import { Reveal } from "@/components/ui/reveal";
-import { ProjectArt } from "@/components/projects/project-art";
+import { Experiment } from "@/components/lab/experiment";
+import { FieldVisual } from "@/components/lab/field-visual";
+import { SealedFiles } from "@/components/archive/sealed-files";
 import { Contact } from "@/components/sections/contact";
-import {
-  projects,
-  lockedProjects,
-  skills,
-  interests,
-} from "@/content/projects";
+import { Reveal } from "@/components/ui/reveal";
+import { projects, skills, interests } from "@/content/projects";
 
 export default function Home() {
+  const [bor, ids] = projects;
   return (
     <main id="main">
       <section
-        className="container hero"
+        className="container identity-section"
         id="home"
-        aria-labelledby="hero-heading"
+        aria-labelledby="identity-heading"
       >
-        <div className="hero-topline mono">
-          <span>
-            <i className="status-dot" /> COMPUTER ENGINEERING STUDENT / BUILDER
-          </span>
-          <span className="hero-edition">
-            AN EXPLORATION IN CODE & CURIOSITY
-          </span>
-        </div>
-        <div className="hero-grid">
-          <div className="hero-copy">
-            <h1 id="hero-heading">
-              Building things
-              <br />
-              that go beyond
-              <br />
-              <em>ideas.</em>
-              <span className="hero-asterisk" aria-hidden="true">
-                ✳
-              </span>
-            </h1>
-            <p>
-              Hey, I&apos;m Kağan. I&apos;m a computer engineering student
-              interested in software, artificial intelligence, and building
-              technology that solves real problems.
-            </p>
-            <p className="hero-extra">
-              I&apos;ve built projects and earned regional awards, and I&apos;m
-              now strengthening my engineering fundamentals one project at a
-              time.
-            </p>
-            <div className="hero-actions">
-              <a className="button button-lime" href="#work">
-                Explore my work <ArrowDownRight size={19} />
-              </a>
-              <a className="text-link" href="#contact">
-                Get in touch <ArrowUpRight size={17} />
-              </a>
-            </div>
+        <div className="identity-composition">
+          <h1 id="identity-heading">
+            <span>KAĞAN</span>
+            <span>KÜÇÜKÇONGAR</span>
+          </h1>
+          <div className="identity-note">
+            <p>Computer Engineering Student</p>
+            <p>Software / AI / Experiments</p>
+            <a href="#work">
+              Visit the exhibits <span aria-hidden="true">↓</span>
+            </a>
           </div>
-          <HeroArt />
+          <span className="identity-margin mono">AN OPEN NOTEBOOK, BY ME.</span>
         </div>
-        <div className="hero-baseline mono">
-          <span>ALWAYS LEARNING. ALWAYS BUILDING.</span>
-          <a href="#about">
-            SCROLL TO DISCOVER <ArrowDown size={15} />
-          </a>
+        <div className="lab-desk">
+          <div className="desk-introduction">
+            <h2>
+              Language
+              <br />& signal.
+            </h2>
+            <p>
+              Two subjects from my work, turned into a small experiment you can
+              play with.
+            </p>
+            <p className="desk-instruction mono">
+              SWITCH THE STUDY.
+              <br />
+              MOVE, DRAG, OR USE THE SLIDER.
+            </p>
+          </div>
+          <Experiment />
         </div>
       </section>
-      <section
-        id="about"
-        className="container section about-section"
-        aria-labelledby="about-heading"
-      >
-        <div className="section-label mono">
-          <span>01 / A BIT ABOUT ME</span>
-          <ArrowDownRight size={19} />
-        </div>
-        <Reveal className="about-grid">
-          <h2 id="about-heading">
-            Curious by nature.
-            <br />
-            <span className="muted">A builder by choice.</span>
-          </h2>
-          <div className="about-copy">
-            <p>
-              I&apos;m studying Computer Engineering at Sivas Cumhuriyet
-              University in Türkiye. My interest in software started before
-              university.
-            </p>
-            <p>
-              I&apos;ve worked on a Turkish programming language for younger
-              students and an AI-powered cybersecurity project, both recognized
-              with regional TÜBİTAK awards.
-            </p>
-            <p>
-              Today I&apos;m strengthening my computer science foundations while
-              exploring software engineering, cloud technologies, and artificial
-              intelligence.
-            </p>
-            <div className="location-line mono">
-              <span className="cross" aria-hidden="true">
-                +
-              </span>{" "}
-              SIVAS CUMHURİYET UNIVERSITY · TÜRKİYE
-            </div>
-          </div>
-        </Reveal>
-      </section>
+
       <section
         id="work"
-        className="container section work-section"
-        aria-labelledby="work-heading"
+        className="exhibitions"
+        aria-labelledby="collection-heading"
       >
-        <div className="section-label mono">
-          <span>02 / SELECTED WORK</span>
-          <span>001—002</span>
-        </div>
-        <Reveal className="section-heading">
-          <h2 id="work-heading">
-            Real projects.
+        <div className="container collection-heading">
+          <h2 id="collection-heading">
+            The public
             <br />
-            <span className="muted">Real learning.</span>
+            <span>collection.</span>
           </h2>
           <p>
-            From making code more approachable
-            <br className="desktop-break" /> to exploring intelligent security.
+            Two completed projects.
+            <br />A language. A security study.
           </p>
-        </Reveal>
-        <div className="projects-grid">
-          {projects.map((project, index) => (
-            <Reveal key={project.slug} delay={index * 0.1}>
-              <a
-                className={`project-card project-${project.slug}`}
-                href={`/projects/${project.slug}/`}
-              >
-                <ProjectArt variant={project.slug} />
-                <div className="project-details">
-                  <div className="project-meta mono">
-                    <span>
-                      {project.number} /{" "}
-                      {project.slug === "bor"
-                        ? "LANGUAGES & EDUCATION"
-                        : "AI & CYBERSECURITY"}
-                    </span>
-                    <ArrowUpRight className="project-arrow" size={24} />
-                  </div>
-                  <h3>{project.name}</h3>
-                  <p>{project.summary}</p>
-                  <div className="award-line">
-                    <Award size={16} />
-                    <span>{project.award}</span>
-                  </div>
-                  <span className="project-cta">
-                    {index === 0 ? "Explore BOR" : "Explore project"}{" "}
-                    <ArrowUpRight size={16} />
-                  </span>
-                </div>
-              </a>
-            </Reveal>
-          ))}
+          <span className="collection-count" aria-hidden="true">
+            02
+          </span>
         </div>
+        <article className="container exhibit-bor" aria-labelledby="bor-title">
+          <div className="bor-copy">
+            <span className="exhibit-number mono">EXHIBIT 001 / LANGUAGE</span>
+            <h3 id="bor-title">BOR</h3>
+            <p className="exhibit-subtitle">
+              Coding,
+              <br />
+              in Turkish.
+            </p>
+            <p className="exhibit-description">{bor.summary}</p>
+            <p className="exhibit-award">
+              TÜBİTAK Kayseri
+              <br />
+              <strong>Regional 1st Place</strong>
+            </p>
+            <a className="exhibit-link" href="/projects/bor/">
+              Enter the BOR exhibit <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <Reveal className="bor-specimen">
+            <div className="specimen-corner mono">
+              B / O / R<span>TYPE AS A STARTING POINT</span>
+            </div>
+            <FieldVisual mode="language" position={37} tone="paper" />
+            <div className="specimen-caption">
+              <span>
+                A familiar language.
+                <br />A first step into programming.
+              </span>
+              <small>
+                Conceptual typography.
+                <br />
+                Not a BOR code sample.
+              </small>
+            </div>
+          </Reveal>
+        </article>
+
+        <article className="exhibit-signal" aria-labelledby="ids-title">
+          <div className="container signal-composition">
+            <div className="signal-title">
+              <span className="exhibit-number mono">EXHIBIT 002 / SIGNAL</span>
+              <h3 id="ids-title">
+                AI-Powered
+                <br />
+                <span>IDS</span>
+              </h3>
+              <p className="exhibit-subtitle">
+                Looking for patterns.
+                <br />
+                Asking what they mean.
+              </p>
+            </div>
+            <Reveal className="signal-preview">
+              <FieldVisual mode="signal" position={65} />
+              <span className="mono signal-preview-caption">
+                A SYNTHETIC SIGNAL STUDY — NOT LIVE SECURITY DATA
+              </span>
+            </Reveal>
+            <div className="signal-copy">
+              <p className="exhibit-description">{ids.summary}</p>
+              <p className="exhibit-award">
+                TÜBİTAK Kayseri
+                <br />
+                <strong>Regional 2nd Place</strong>
+              </p>
+              <a className="exhibit-link" href="/projects/ai-ids/">
+                Enter the signal exhibit <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
       </section>
+
       <section
         id="next-up"
-        className="container section locked-section"
-        aria-labelledby="next-heading"
+        className="archive-section"
+        aria-labelledby="archive-heading"
       >
-        <div className="section-label mono">
-          <span>03 / WHAT&apos;S NEXT</span>
-          <span>003—005</span>
-        </div>
-        <Reveal className="section-heading">
-          <h2 id="next-heading">
-            Some things are still
-            <br />
-            <span className="muted">in the making.</span>
-          </h2>
-          <p>
-            Not everything I&apos;m working on is ready to be shared. A few
-            ideas are taking shape behind the scenes.
+        <div className="container">
+          <div className="archive-heading">
+            <h2 id="archive-heading">
+              The sealed
+              <br />
+              <span>archive.</span>
+            </h2>
+            <p>
+              Some things aren&apos;t ready to be shared.
+              <br />
+              These files stay closed.
+            </p>
+            <span className="archive-heading-note mono">
+              CONTENTS WITHHELD
+              <br />
+              003—005
+            </span>
+          </div>
+          <SealedFiles />
+          <p className="archive-note">
+            I&apos;ll open these when there&apos;s something ready to show.
           </p>
-        </Reveal>
-        <div className="locked-grid">
-          {lockedProjects.map((project, index) => (
-            <Reveal key={project.number} delay={index * 0.06}>
-              <article
-                className={`locked-card locked-${project.number}`}
-                tabIndex={0}
-                aria-labelledby={`locked-${project.number}-title`}
-                aria-describedby={`locked-${project.number}-note`}
-              >
-                <div className="locked-art" aria-hidden="true">
-                  <div className="locked-sheet sheet-one" />
-                  <div className="locked-sheet sheet-two" />
-                  <div className="locked-sheet sheet-three" />
-                  <span className="lock-emblem">
-                    <LockKeyhole size={23} strokeWidth={1.5} />
-                  </span>
-                </div>
-                <div className="locked-content">
-                  <span className="locked-status mono">
-                    <span />
-                    {project.status}
-                  </span>
-                  <h3 id={`locked-${project.number}-title`}>
-                    Project {project.number}
-                  </h3>
-                  <p id={`locked-${project.number}-note`}>{project.note}</p>
-                  <LockKeyhole
-                    className="locked-corner"
-                    size={16}
-                    aria-hidden="true"
-                  />
-                </div>
-              </article>
-            </Reveal>
-          ))}
-        </div>
-        <p className="locked-footnote">
-          <span aria-hidden="true">↳</span> Good things take time. I&apos;ll
-          share more when they&apos;re ready.
-        </p>
-      </section>
-      <section
-        id="achievements"
-        className="container section achievements"
-        aria-labelledby="achievements-heading"
-      >
-        <div className="section-label mono">
-          <span>04 / MILESTONES</span>
-          <Sparkles size={18} />
-        </div>
-        <Reveal className="section-heading">
-          <h2 id="achievements-heading">
-            A little proof
-            <br />
-            <span className="muted">of the work.</span>
-          </h2>
-          <p>
-            Not the finish line. Just meaningful
-            <br className="desktop-break" /> steps along the way.
-          </p>
-        </Reveal>
-        <div className="achievement-list">
-          {projects.map((project, index) => (
-            <Reveal key={project.slug}>
-              <a
-                href={`/projects/${project.slug}/`}
-                className="achievement-row"
-              >
-                <span className="achievement-number mono">0{index + 1}</span>
-                <span className="rank">
-                  {project.rank}
-                  <span className="rank-star" aria-hidden="true">
-                    ✳
-                  </span>
-                </span>
-                <span className="achievement-info">
-                  <span className="mono">
-                    REGIONAL {index === 0 ? "FIRST" : "SECOND"} PLACE
-                  </span>
-                  <strong>TÜBİTAK Kayseri</strong>
-                </span>
-                <span className="achievement-project">
-                  {project.name}
-                  <ArrowUpRight size={20} />
-                </span>
-              </a>
-            </Reveal>
-          ))}
         </div>
       </section>
+
       <section
-        id="skills"
-        className="container section skills-section"
-        aria-labelledby="skills-heading"
+        className="container field-notes"
+        id="about"
+        aria-labelledby="notes-heading"
       >
-        <div className="section-label mono">
-          <span>05 / SKILLS & INTERESTS</span>
-          <Asterisk size={20} />
-        </div>
-        <Reveal className="skills-layout">
-          <h2 id="skills-heading">
-            Code, systems,
+        <Reveal className="notes-title">
+          <h2 id="notes-heading">
+            Behind
             <br />
-            and everything
-            <br />
-            <span className="muted">in between.</span>
+            <span>the work.</span>
           </h2>
-          <div className="skills-groups">
+          <p className="notes-signature">Kağan Küçükçongar.</p>
+        </Reveal>
+        <div className="notes-body">
+          <div className="personal-note">
+            <p>
+              I&apos;m studying Computer Engineering at Sivas Cumhuriyet
+              University in Türkiye.
+            </p>
+            <p>
+              Before university, I worked on a Turkish programming language for
+              younger students and an AI-powered cybersecurity project. Now
+              I&apos;m spending more time on the fundamentals — and trying
+              things as I learn.
+            </p>
+          </div>
+          <div className="practice-columns" id="skills">
             <div>
-              <h3 className="mono">
-                <span className="status-dot" /> PROJECT-BACKED
-              </h3>
-              <ul className="skill-tags">
+              <h3>Through projects</h3>
+              <ul>
                 {skills.map((skill) => (
                   <li key={skill}>{skill}</li>
                 ))}
               </ul>
             </div>
             <div>
-              <h3 className="mono">
-                <span className="outline-dot" /> EXPLORING & STRENGTHENING
-              </h3>
-              <ul className="skill-tags interest-tags">
-                {interests.map((skill) => (
-                  <li key={skill}>{skill}</li>
+              <h3>Currently exploring</h3>
+              <ul>
+                {interests.map((interest) => (
+                  <li key={interest}>{interest}</li>
                 ))}
               </ul>
             </div>
-            <p className="skills-note">
-              Learning by doing. Connecting the dots along the way.
+          </div>
+          <div className="recognition-note" id="achievements">
+            <h3>Recognition</h3>
+            <p>
+              <strong>BOR</strong>
+              <span>TÜBİTAK Kayseri · Regional 1st Place</span>
+            </p>
+            <p>
+              <strong>AI-Powered IDS</strong>
+              <span>TÜBİTAK Kayseri · Regional 2nd Place</span>
             </p>
           </div>
-        </Reveal>
+        </div>
       </section>
       <Contact />
     </main>

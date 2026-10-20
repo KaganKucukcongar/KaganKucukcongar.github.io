@@ -10,7 +10,7 @@ export default function NotFound() {
         <span className="muted">off the map.</span>
       </h1>
       <p>Let&apos;s get you back to the work.</p>
-      <Link className="button button-lime" href="/">
+      <Link className="text-action" href="/">
         <ArrowLeft size={18} /> Back home
       </Link>
     </main>

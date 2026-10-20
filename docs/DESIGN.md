@@ -1,59 +1,46 @@
-# Dark Editorial × Creative Engineering — Design and motion specification
+# The Open Lab — design system
 
-## Visual intent
-Young, dynamic, creative and engaging but not childish or overly corporate. Distinctive typography and composition should remain compelling even if 3D is disabled.
+## Central idea
 
-## Tokens
-- background: `#0B0D12`
-- surface: `#151923`
-- elevated: `#222937`
-- text-primary: `#F4F1EB`
-- text-secondary: `#A6ACBA`
-- accent-lime: `#D7FF72`
-- accent-violet: `#9276FF`
-- border: `#303543`
+An editorial identity wrapped around an optical bench: the visitor changes how one field is read, from **language** to **signal**. Project concepts are the visual system, rather than decoration attached to a portfolio template. A tactile, sealed archive is the counterpart to the open public exhibits.
 
-Use lime as a selective interactive accent and violet for restrained 3D detailing. Avoid continuous rainbow gradients and aggressive neon.
+## Palette
 
-## Fonts
-- Display: Space Grotesk (500–700)
-- UI / body: DM Sans (400–600)
-- Technical metadata: JetBrains Mono (400–500)
+| Token            | Value     | Use                                                       |
+| ---------------- | --------- | --------------------------------------------------------- |
+| Warm Paper       | `#F0ECE3` | Identity, BOR, notes, reading surfaces                    |
+| Deep Ink         | `#191B1B` | Primary type, inspection bench, IDS, footer               |
+| Signal Orange    | `#E75B39` | Selected study, sampling line, contact, spatial accents   |
+| Industrial Stone | `#B5B7A9` | Archive ground, secondary ink-surface text, paper backing |
+| Muted Steel      | `#536B68` | Secondary paper-surface text, sealed file surface         |
 
-Fluid hero sizing approximately 88–104px on desktop (space permitting), 42–60px on mobile. Comfortable readable body size.
+Use deliberate surface changes. The homepage is neither all light nor all dark. Small text uses Ink on Paper/Orange/Stone, Steel on Paper, and Paper/Stone on Ink. Paper text on Steel is supported. Orange is mostly a surface or graphic accent, not small body text on Paper. A darker stamp ink (`#A1361F`) provides readable paper seals.
 
-## Layout
-Maximum container ~1320px. Asymmetric editorial grid, strong whitespace and typography, 48–72px desktop gutters, 24–40px tablet, 20–24px mobile.
+## Type
 
-Hero: left headline and CTA, right procedural interactive 3D sculpture.  
-About: short editorial text, two columns on large screens.  
-Completed work: two distinct featured cards, dedicated case study routes.  
-Locked work: three compact mysterious dark cards with a lock icon and limited hover effect.  
-Achievements: prominent typographic rankings, no fake dates.  
-Skills: separate demonstrated work from interests.  
-Contact: distinctive contrasting lime block with genuine contact CTAs.
+- **Manrope**: monumental uppercase name and utilitarian identity; tightly spaced, heavy, with a separate smaller role block.
+- **Bricolage Grotesque**: exhibition typography, oversized BOR specimens, spatial letter layers, expressive auxiliary headings.
+- **DM Sans**: readable narrative copy.
+- **JetBrains Mono**: control labels, inspection instructions, file indices, project metadata.
 
-## 3D scene
-Abstract sculpture expressing interconnected systems: chrome/frosted-glass geometries, rings/layers, soft lighting, gentle idle rotation and cursor parallax. Responsive adaptive pixel ratio; load lazily. Support fallback without WebGL, on smaller/slower devices, and for reduced-motion preference.
+All are bundled, pinned Fontsource assets hosted via `next/font/local`, including Turkish glyph subsets. No runtime font or asset requests. Type sizes and whitespace establish hierarchy; avoid label overload, logo walls, generic pill tags, and proficiency charts.
 
-Avoid orbiting globes, floating AI brains, full-screen particle storms, meaningless pseudo-code and motion causing scroll jank.
+## Composition
 
-## Timing
-Button hover 160–220ms  
-Card hover 220–350ms  
-Section reveal 450–700ms  
-Hero reveal sequence 700–1100ms  
-Route transitions 250–450ms
+The owner's name occupies the opening field. A side note identifies his role; it is not replaced by a marketing headline. The bench sits below in an asymmetric layout. BOR uses a rotated, hard-edged paper specimen beside editorial copy. IDS changes the whole ground to Ink and gives synthetic traces more lateral space. Archive files have distinct material patterns, staggered resting angles, tabs, redaction marks, and seals. Personal notes mix a short introduction, learning lists, and factual recognition in one notebook composition. Contact is a clear Orange ground with native links.
 
-Prefer CSS transforms/opacity. No animation should obscure reading, require hover, or block keyboard interactions.
+No rounded SaaS panels, glowing gradients, metallic sculpture, generic particles, repeated identical project cards, or decorative icons. The header menu icons serve navigation; arrows indicate actual links.
 
-## Quality
-- Mobile-first robustness, no horizontal overflow
-- Touch, keyboard and focus states
-- WCAG AA-level contrast where possible
-- Semantic HTML and descriptive headings
-- Lazy-loaded heavy code, optimized media and fonts
-- Reduced-motion behavior respected
-- No fake loading screens, fake interactive elements, meaningless statistics or repeated generic cards
+## Interaction and motion
 
-Test desktop/mobile with WebGL enabled and disabled before publication.
+`Experiment` is the shared instrument. A LANGUAGE/SIGNAL tablist switches between different geometric systems. A range input and pointer/touch position drive the same inspection axis. LANGUAGE changes letter spacing and light spatial depth; SIGNAL changes the sampling line and the analytical traces around it. Both remain explicitly conceptual.
+
+SVG is intentional here: glyphs and traces remain sharp, inspectable, lightweight, and independent of WebGL. CSS perspective gives the instrument and sealed files spatial behavior. There are no unrelated 3D objects. Heavy WebGL dependencies from the earlier implementation are removed.
+
+Desktop animation is capped at 25 updates/second and paused offscreen or in a hidden tab. Mobile/data-saving views start paused, with deliberate opt-in animation. Reduced motion keeps geometry static, removes transform/reveal/hover animation, and preserves direct tab/range interaction. Use 180–250ms controls, 250–350ms paper tilt, roughly 600ms purposeful reveals, and 300ms page entrance. Content never starts hidden.
+
+## Mobile and access
+
+Use a separate stacked composition: large first name, single-line surname scaled to the viewport, role below, a compact control desk, vertically arranged exhibits, and unrotated archive files. Touch keeps vertical page scrolling; a slider provides an equally capable alternative to pointer movement. Tabs support arrows/Home/End; focus is visible and Escape closes the menu. Files are labeled articles, never fake buttons. All factual content and native project/contact links remain usable without JavaScript. No hidden project routes exist.
+
+Inspect desktop, tablet, 320–390px mobile, reduced motion, no WebGL, data saving, no JavaScript, keyboard focus, and full page compositions before updating the PR.

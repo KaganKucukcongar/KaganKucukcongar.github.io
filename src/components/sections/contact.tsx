@@ -1,44 +1,34 @@
-import { ArrowUpRight, GitFork, Mail } from "lucide-react";
 import { site } from "@/config/site";
-
 export function Contact() {
   return (
     <section
+      className="contact-section"
       id="contact"
-      className="container contact-wrap"
       aria-labelledby="contact-heading"
     >
-      <div className="contact-panel">
-        <div className="contact-top mono">
-          <span>HAVE AN IDEA? SAY HELLO.</span>
-          <span>
-            LET&apos;S MAKE A CONNECTION <span aria-hidden="true">↗</span>
-          </span>
-        </div>
-        <div className="contact-grid">
+      <div className="container contact-inner">
+        <div>
           <h2 id="contact-heading">
-            Have something
+            Leave
             <br />
-            <span>interesting</span> in mind?
+            <span>a note.</span>
           </h2>
-          <div>
-            <p>
-              I&apos;m always open to thoughtful conversations, interesting
-              opportunities, and ideas worth building.
-            </p>
-            <a className="contact-cta" href={site.links.email}>
-              Get in touch <ArrowUpRight size={26} />
-            </a>
-          </div>
+          <p>
+            A question, an interesting opportunity,
+            <br />
+            or an idea worth talking about.
+          </p>
         </div>
-        <div className="contact-bottom">
+        <div className="contact-links">
+          <a className="contact-cta" href={site.links.email}>
+            Email Kağan <span aria-hidden="true">↗</span>
+          </a>
           <a href={site.links.github} target="_blank" rel="noopener noreferrer">
-            <GitFork size={16} /> GitHub <ArrowUpRight size={14} />
+            Find me on GitHub <span aria-hidden="true">↗</span>
           </a>
-          <a href={site.links.email}>
-            <Mail size={16} /> Email <ArrowUpRight size={14} />
-          </a>
-          <span className="mono">ALWAYS LEARNING. ALWAYS BUILDING.</span>
+          <span className="mono contact-address">
+            kucukcongarkagan@gmail.com
+          </span>
         </div>
       </div>
     </section>

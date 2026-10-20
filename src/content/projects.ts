@@ -21,7 +21,7 @@ export const projects: Project[] = [
     fullName: "BOR — Turkish Programming Language",
     category: "Programming Languages / Education Technology",
     summary:
-      "A Turkish-language programming project created to help middle school students take their first steps into coding through a more accessible learning experience.",
+      "A Turkish-language programming project for middle school students taking their first steps into coding.",
     award: "TÜBİTAK Kayseri Regional 1st Place",
     rank: "1st",
     idea: "Make first encounters with programming more approachable for Turkish-speaking younger students.",
@@ -37,7 +37,7 @@ export const projects: Project[] = [
     fullName: "AI-Powered IDS — Intelligent Intrusion Detection",
     category: "Artificial Intelligence / Cybersecurity",
     summary:
-      "An AI-powered intrusion detection project exploring intelligent approaches to identifying potential cybersecurity threats.",
+      "An intrusion detection project exploring how AI can help identify suspicious security activity.",
     award: "TÜBİTAK Kayseri Regional 2nd Place",
     rank: "2nd",
     idea: "Explore artificial intelligence in intrusion detection.",
@@ -49,9 +49,9 @@ export const projects: Project[] = [
 
 // No private project data belongs here, in metadata, or in a hidden route.
 export const lockedProjects = [
-  { number: "03", status: "Currently building", note: "Details under wraps" },
-  { number: "04", status: "Locked", note: "Work in progress" },
-  { number: "05", status: "Exploring", note: "More to come" },
+  { number: "03", status: "Currently building" },
+  { number: "04", status: "Locked" },
+  { number: "05", status: "Exploring" },
 ] as const;
 
 export const skills = [

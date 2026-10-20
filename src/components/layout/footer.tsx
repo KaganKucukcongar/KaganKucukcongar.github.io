@@ -1,21 +1,22 @@
-import { ArrowUpRight, ArrowUp } from "lucide-react";
 import { site } from "@/config/site";
-
 export function Footer() {
   return (
-    <footer className="container footer">
-      <p>Made with curiosity, code, and a lot of trial and error.</p>
-      <div>
-        <a href={site.links.github} target="_blank" rel="noopener noreferrer">
-          GitHub <ArrowUpRight size={14} />
+    <footer className="footer">
+      <div className="container footer-inner">
+        <a href="/#home" className="footer-title">
+          The Open Lab<span aria-hidden="true">↥</span>
         </a>
-        <a href="/#home" aria-label="Back to top">
-          Back to top <ArrowUp size={14} />
-        </a>
+        <p>
+          A personal collection of projects
+          <br />
+          and experiments by {site.name}.
+        </p>
+        <span className="mono">
+          © {new Date().getFullYear()}
+          <br />
+          COMPUTER ENGINEERING STUDENT
+        </span>
       </div>
-      <span className="footer-name">
-        © {new Date().getFullYear()} {site.name}
-      </span>
     </footer>
   );
 }

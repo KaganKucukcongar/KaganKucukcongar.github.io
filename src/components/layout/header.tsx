@@ -1,59 +1,64 @@
 "use client";
-
-import Link from "next/link";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { navigation, site } from "@/config/site";
+import { navigation } from "@/config/site";
 
 export function Header() {
   const [open, setOpen] = useState(false);
   const button = useRef<HTMLButtonElement>(null);
+  const pathname = usePathname();
   useEffect(() => {
-    const onKey = (event: KeyboardEvent) => {
+    const escape = (event: KeyboardEvent) => {
       if (event.key === "Escape" && open) {
         setOpen(false);
         button.current?.focus();
       }
     };
-    document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
+    document.addEventListener("keydown", escape);
+    return () => document.removeEventListener("keydown", escape);
   }, [open]);
-
   return (
-    <header className="header">
+    <header
+      className={`header ${pathname.includes("ai-ids") ? "header-ink" : ""}`}
+    >
       <div className="container header-inner">
-        <Link
+        <a
+          className="lab-mark"
           href="/#home"
-          className="wordmark"
-          aria-label="Kağan Küçükçongar, home"
+          aria-label="The Open Lab, Kağan Küçükçongar, home"
         >
-          kk<span className="wordmark-dot">.</span>
-          <span className="wordmark-name">
-            KAĞAN
-            <br />
-            KÜÇÜKÇONGAR
+          <span className="lab-mark-symbol" aria-hidden="true">
+            [o/l]
           </span>
-        </Link>
+          <span>
+            THE
+            <br />
+            OPEN LAB
+          </span>
+        </a>
+        <span className="header-byline mono">
+          A PERSONAL COLLECTION
+          <br />
+          BY KAĞAN KÜÇÜKÇONGAR
+        </span>
         <nav className="desktop-nav" aria-label="Main navigation">
           {navigation.map((item) => (
-            <Link key={item.label} href={item.href}>
+            <a key={item.label} href={item.href}>
               {item.label}
-            </Link>
+            </a>
           ))}
         </nav>
-        <a className="nav-contact" href={site.links.email}>
-          Let&apos;s connect <ArrowUpRight size={15} />
-        </a>
         <button
           ref={button}
           className="menu-toggle"
           type="button"
-          onClick={() => setOpen(!open)}
           aria-expanded={open}
           aria-controls="mobile-navigation"
           aria-label={open ? "Close navigation" : "Open navigation"}
+          onClick={() => setOpen(!open)}
         >
-          {open ? <X /> : <Menu />}
+          {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
       <nav
@@ -62,14 +67,10 @@ export function Header() {
         aria-label="Mobile navigation"
       >
         {navigation.map((item) => (
-          <Link
-            key={item.label}
-            href={item.href}
-            onClick={() => setOpen(false)}
-          >
+          <a key={item.label} href={item.href} onClick={() => setOpen(false)}>
             {item.label}
-            <ArrowUpRight size={18} />
-          </Link>
+            <span aria-hidden="true">↗</span>
+          </a>
         ))}
       </nav>
     </header>

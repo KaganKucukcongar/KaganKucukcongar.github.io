@@ -1,50 +1,43 @@
-# Creative developer portfolio: implementation brief
+# The Open Lab — creative and implementation brief
 
-## Product intent
-Build a polished, young, dynamic, experimental but credible personal portfolio. The style is **Dark Editorial × Creative Engineering**. It should not resemble a corporate SaaS template, classroom exercise, or generic AI-generated cyberpunk page.
+## Concept
 
-## Truth and visibility rules
-**Completed, publicly described projects only:**
-1. BOR — Turkish Programming Language; TÜBİTAK Kayseri regional first place; Turkish-language programming project aimed at introducing coding to middle school students.
-2. AI-Powered IDS — AI-assisted intrusion detection project; TÜBİTAK Kayseri regional second place.
+Present Kağan Küçükçongar's work as an open experiment bench and a small digital collection. His real identity comes first: **KAĞAN KÜÇÜKÇONGAR / Computer Engineering Student / Software / AI / Experiments**. Use experimental editorial composition, Swiss typographic discipline, and industrial archive cues without copying a reference portfolio.
 
-These may have full case-study routes (`/projects/bor`, `/projects/ai-ids`). Do not fabricate implementation details, metrics, dates, source links, award categories, or datasets. If a field is unverified, omit it.
+The previous visual direction is retired. This document and `DESIGN.md` govern new changes.
 
-**Other projects:** Show 3 anonymized locked cards titled Project 03/04/05, with statuses Currently Building / Locked / Exploring. No internal project names, features, code, screenshots, client-side payloads, hidden routes, source maps, or metadata. "Locked" is a visual treatment, not access control.
+## Signature
 
-## Stack
-- Next.js App Router, TypeScript strict, Tailwind CSS
-- React Three Fiber, Three.js, Drei for hero
-- Motion for React for restrained UI transitions
-- next/font, Lucide icons
-- Use compatible current stable package versions. Avoid unnecessary dependencies.
+One inspection field has two genuinely different states:
 
-## Routes and sections
-Homepage: navigation, 3D hero, About, Selected Work, Locked Projects, Achievements, Skills & Interests, Contact, Footer.
-Case studies: `/projects/bor`, `/projects/ai-ids`. No routes for locked work.
+- **01 / LANGUAGE**: B, O, R become movable typographic specimens. A shared inspection axis changes spacing; pointer position gives subtle spatial depth.
+- **02 / SIGNAL**: synthetic traces respond to the same inspection axis. Pointer, touch, and a labeled range input move a sampling line through the field.
 
-## Hero
-Large editorial headline, short natural introduction, CTA ("Explore my work" and "Get in touch"), layered procedural abstract 3D sculpture based on connected systems. Subtle cursor parallax and slow rotation. No globes, brains, gratuitous particle clouds, or exaggerated neon.
+Keyboard tabs switch states with arrow keys/Home/End. Every control has a real effect. Animation is optional, pauses offscreen/when the document is hidden, and stays off for reduced motion. Mobile and data-saving visitors start with a static field but retain the study switch and inspection control. No WebGL is required; spatial depth belongs to the typography and paper layers.
 
-## Projects
-Distinct presentation for each completed project, with full but truthful Challenge / Approach / Outcome structure and verified awards. Use conceptual graphics where no genuine screenshots exist, clearly avoiding fake app mockups presented as real evidence.
+## Composition
 
-## Locked work
-Attractive blur, layered depth, lock icon, non-functional details intentionally omitted, pointer/focus feedback, no invented release date or fake progress indicator. Do not create links on these cards.
+Identity → interactive bench → distinct BOR exhibit → dark signal exhibit → sealed archive → personal field notes → contact. Avoid the familiar slogan/about/card-grid/skill-pill rhythm. Do not add repeated decorative labels or dividers to every section.
 
-## Skills
-Separate demonstrated skills (Programming, Software Development, AI, Cybersecurity, Problem Solving) from interests and active learning (Computer Science, Software Engineering, Cloud Engineering, Machine Learning, Product Development). Avoid fake numeric proficiency bars or claims of seniority.
+BOR and IDS must look like separate exhibits, with their own visual language and dedicated static case studies. BOR is typographic, tactile, and paper-led; IDS is dark, linear, and signal-led. Their awards remain accurate. Case-study narratives retain Idea / Challenge / Approach / Outcome and contain only verified facts.
 
-## Requirements
-- Responsive, accessible semantic markup with keyboard focus and contrast.
-- Reduced-motion and WebGL-unavailable fallbacks.
-- Lazy-load scene, optimized images/fonts, no horizontal overflow.
-- Real links only from site config; do not invent contact details.
-- Production build, typecheck, lint, testing, and readable README.
-- GitHub Pages: Next.js static export, Pages deployment via GitHub Actions, root-relative paths appropriate to username Pages repository, preserve `CNAME`/existing site until ready.
+## Public/private boundary
 
-## Suggested layout
-`src/app`, `src/components/{layout,sections,projects,three,ui}`, `src/content`, `src/config`, `src/styles`.
+Public projects:
 
-## Acceptance criteria
-Fully working desktop/mobile site, intentional art direction, two completed case studies, anonymous locked cards, working nav, 3D fallback, reduced motion, passing checks, no unauthorized public information. Do not deploy or merge without owner approval.
+1. BOR — Turkish Programming Language, for middle school students; TÜBİTAK Kayseri Regional 1st Place.
+2. AI-Powered IDS — AI-assisted intrusion detection project; TÜBİTAK Kayseri Regional 2nd Place.
+
+No unverified syntax, implementation stacks, metrics, datasets, screenshots, dates, demos, or source repositories. Conceptual typography is not a BOR code sample. Signal graphics are synthetic, not security evidence.
+
+Other work: **CASE 003 / Currently building**, **CASE 004 / Locked**, **CASE 005 / Exploring**. Three distinct sealed file surfaces with paper layers and focus/hover feedback. They do not open. No progress percentages, release dates, private payloads, or hidden routes. The seal is visual treatment, not access control.
+
+## Technical acceptance
+
+- Next.js App Router, strict TypeScript, Tailwind, local `next/font`, purposeful Motion transitions.
+- Responsive layouts without horizontal overflow; readable text and AA contrast; semantic headings and landmarks.
+- Mouse, touch, and keyboard inspection; accessible tabs/range/pause; reduced-motion and no-JavaScript content.
+- Only `/projects/bor/` and `/projects/ai-ids/`; working canonical root, static assets, sitemap, robots, and 404.
+- Static export and GitHub Pages compatibility; preserve original files/CNAME and `main`.
+- Lint, typecheck, production build, export/privacy audit, browser tests, axe, and reviewed desktop/mobile screenshots.
+- Update existing branch and PR #2. No merge or deployment.
