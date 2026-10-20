@@ -73,8 +73,8 @@ const mono = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — The Open Lab`,
-    template: `%s | The Open Lab`,
+    default: site.name,
+    template: `%s | ${site.name}`,
   },
   description: site.description,
   alternates: { canonical: "/" },
@@ -82,8 +82,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "The Open Lab",
-    title: `${site.name} — The Open Lab`,
+    siteName: site.name,
+    title: site.name,
     description: site.description,
     url: "/",
     images: [
@@ -91,13 +91,13 @@ export const metadata: Metadata = {
         url: "/social.png",
         width: 1200,
         height: 630,
-        alt: "The Open Lab — Kağan Küçükçongar. Software, AI, experiments.",
+        alt: `${site.name}. Software, AI, experiments.`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — The Open Lab`,
+    title: site.name,
     description: site.description,
     images: ["/social.png"],
   },

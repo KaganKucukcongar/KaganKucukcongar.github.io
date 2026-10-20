@@ -4,7 +4,7 @@ export const site = {
   university: "Sivas Cumhuriyet University",
   url: "https://kagankucukcongar.github.io",
   description:
-    "The Open Lab — projects and experiments by Kağan Küçükçongar, a Computer Engineering student at Sivas Cumhuriyet University. Language, software, AI, and cybersecurity.",
+    "Projects and experiments by Kağan Küçükçongar, a Computer Engineering student at Sivas Cumhuriyet University. Language, software, AI, and cybersecurity.",
   // Verified against the existing published site. Add other socials only after verification.
   links: {
     github: "https://github.com/KaganKucukcongar",

@@ -43,7 +43,7 @@ export function SealedFiles() {
           </span>
           <div className="folder-inner">
             <div className="file-top mono">
-              <span>THE OPEN LAB</span>
+              <span>PERSONAL ARCHIVE</span>
               <span>RESEARCH FILE</span>
             </div>
             <h3 id={`case-${project.number}`}>

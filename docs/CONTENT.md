@@ -1,4 +1,4 @@
-# The Open Lab — public content
+# Kağan Küçükçongar — public content
 
 Owner: **Kağan Küçükçongar**. Role: **Computer Engineering Student**. University: **Sivas Cumhuriyet University, Türkiye**.
 

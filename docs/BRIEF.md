@@ -1,10 +1,10 @@
-# The Open Lab — creative and implementation brief
+# Kağan Küçükçongar — creative and implementation brief
 
 ## Concept
 
 Present Kağan Küçükçongar's work as an open experiment bench and a small digital collection. His real identity comes first: **KAĞAN KÜÇÜKÇONGAR / Computer Engineering Student / Software / AI / Experiments**. Use experimental editorial composition, Swiss typographic discipline, and industrial archive cues without copying a reference portfolio.
 
-The previous visual direction is retired. This document and `DESIGN.md` govern new changes.
+The portfolio is named **Kağan Küçükçongar**, with a KK monogram. Use the owner's identity throughout navigation, footer, metadata, and sharing assets. This document and `DESIGN.md` govern new changes.
 
 ## Signature
 

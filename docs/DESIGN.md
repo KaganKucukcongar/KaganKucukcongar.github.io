@@ -1,4 +1,4 @@
-# The Open Lab — design system
+# Kağan Küçükçongar — design system
 
 ## Central idea
 

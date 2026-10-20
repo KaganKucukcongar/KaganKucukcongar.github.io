@@ -2,7 +2,7 @@
 import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { navigation } from "@/config/site";
+import { navigation, site } from "@/config/site";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -23,24 +23,20 @@ export function Header() {
       className={`header ${pathname.includes("ai-ids") ? "header-ink" : ""}`}
     >
       <div className="container header-inner">
-        <a
-          className="lab-mark"
-          href="/#home"
-          aria-label="The Open Lab, Kağan Küçükçongar, home"
-        >
+        <a className="lab-mark" href="/#home" aria-label={`${site.name}, home`}>
           <span className="lab-mark-symbol" aria-hidden="true">
-            [o/l]
+            KK
           </span>
           <span>
-            THE
+            KAĞAN
             <br />
-            OPEN LAB
+            KÜÇÜKÇONGAR
           </span>
         </a>
         <span className="header-byline mono">
           A PERSONAL COLLECTION
           <br />
-          BY KAĞAN KÜÇÜKÇONGAR
+          SOFTWARE / AI / EXPERIMENTS
         </span>
         <nav className="desktop-nav" aria-label="Main navigation">
           {navigation.map((item) => (

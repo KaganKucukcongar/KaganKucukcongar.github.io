@@ -1,6 +1,8 @@
-# The Open Lab — validation record
+# Kağan Küçükçongar — validation record
 
 The visual identity and interaction have been rebuilt around the owner's name, a two-mode language/signal inspection bench, two distinct exhibits, and a sealed archive. The old sculpture, colors, repeated project cards, and generic homepage slogans have been removed from the replacement app.
+
+The portfolio identity uses Kağan Küçükçongar and a KK monogram across navigation, footer, browser metadata, favicon, and sharing artwork. Archive labels use PERSONAL ARCHIVE. The export regression check verifies the owner's page title and excludes retired branding from shipped assets.
 
 ## Production validation — 20 October 2026
 

@@ -1,4 +1,4 @@
-# The Open Lab — Kağan Küçükçongar
+# Kağan Küçükçongar — portfolio
 
 A personal experiment bench and digital project collection built with Next.js App Router, strict TypeScript, Tailwind CSS, and Motion. The identity, two-mode LANGUAGE/SIGNAL instrument, distinct BOR/IDS exhibits, and sealed archive form one project-led design system. See `docs/DESIGN.md` for the current art direction.
 

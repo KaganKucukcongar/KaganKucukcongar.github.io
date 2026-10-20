@@ -1,6 +1,6 @@
-# The Open Lab — repository instructions
+# Kağan Küçükçongar — repository instructions
 
-Read `docs/BRIEF.md`, `docs/CONTENT.md`, and `docs/DESIGN.md` before application changes. These documents define the current art direction: **The Open Lab**, an interactive personal experiment bench and project archive.
+Read `docs/BRIEF.md`, `docs/CONTENT.md`, and `docs/DESIGN.md` before application changes. These documents define the current art direction: an interactive personal experiment bench and project archive. The portfolio uses **Kağan Küçükçongar** as its identity; do not introduce a separate brand name.
 
 Preserve the published `main` branch and the original root `index.html`, `k.png`, and `CNAME` byte-for-byte. Work on `codex/portfolio-redesign` and update PR #2. Do not merge, deploy, change Pages settings, or change the domain without explicit owner approval.
 

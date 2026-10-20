@@ -89,9 +89,9 @@ test("exported project links have matching static routes", async () => {
   }
 });
 
-test("the exported identity uses The Open Lab and excludes the retired visual system", async () => {
+test("the exported identity uses the owner's name and excludes the retired branding and visual system", async () => {
   const html = await readFile(resolve(root, "index.html"), "utf8");
-  assert.ok(html.includes("The Open Lab"));
+  assert.ok(html.includes("<title>Kağan Küçükçongar</title>"));
   assert.ok(html.includes("KAĞAN"));
   assert.ok(html.includes("LANGUAGE") && html.includes("SIGNAL"));
   assert.ok(
@@ -101,7 +101,7 @@ test("the exported identity uses The Open Lab and excludes the retired visual sy
     [".html", ".js", ".css", ".svg"].includes(extname(file)),
   )) {
     assert.equal(
-      /#D7FF72|#9276FF|Building things that go beyond|Abstract interconnected chrome rings|Connected by curiosity/i.test(
+      /open lab|o\/l|#D7FF72|#9276FF|Building things that go beyond|Abstract interconnected chrome rings|Connected by curiosity/i.test(
         await readFile(file, "utf8"),
       ),
       false,
