@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, Award } from "lucide-react";
 import { projects } from "@/content/projects";
@@ -48,9 +47,9 @@ export default async function ProjectPage({
   return (
     <main id="main" className={`case-study case-${slug}`}>
       <section className="container case-hero">
-        <Link className="back-link mono" href="/#work">
+        <a className="back-link mono" href="/#work">
           <ArrowLeft size={15} /> BACK TO SELECTED WORK
-        </Link>
+        </a>
         <div className="case-eyebrow mono">
           <span>PROJECT {project.number}</span>
           <span>{project.category}</span>
@@ -104,10 +103,10 @@ export default async function ProjectPage({
       </section>
       <section className="container next-project">
         <span className="mono">KEEP EXPLORING / NEXT PROJECT</span>
-        <Link href={`/projects/${next.slug}/`}>
+        <a href={`/projects/${next.slug}/`}>
           <span>{next.name}</span>
           <ArrowUpRight />
-        </Link>
+        </a>
       </section>
       <Contact />
     </main>

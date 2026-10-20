@@ -37,6 +37,8 @@ npm run preview
 
 Only `/projects/bor/` and `/projects/ai-ids/` exist. Project 03/04/05 are focusable articles with visual feedback and **no links, buttons, hidden routes, private metadata, or internal project details**. Blur is decoration, not access control. No invented dates, metrics, source links, credentials, or release information are used.
 
+Case-study links use standard document navigation. This keeps static Pages navigation independent of the WebGL scene's React lifecycle, including on software-rendered or slower graphics devices; the new page still uses the restrained entrance transition.
+
 ## Performance and accessibility
 
 The content is pre-rendered and remains readable without JavaScript. Fonts are bundled from pinned Fontsource packages and self-hosted using `next/font/local`; builds do not request Google Fonts. The scene is imported separately on eligible desktops, with a capped device pixel ratio and low-power preference. Geometry and lighting are generated locally. Mobile, reduced-motion, data-saving, unavailable WebGL2, scene errors, and context loss use the static sculpture. Rendering pauses when offscreen or the document is hidden; a keyboard-accessible pause/play control is provided. Content transitions never start hidden.

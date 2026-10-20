@@ -2,6 +2,8 @@
 
 Recorded on 20 October 2026 against the production static export.
 
+CI trace review identified delayed client-side case-study transitions under software WebGL even though route requests completed immediately. Project links now use standard document navigation, keeping static-route navigation independent of scene teardown. Navigation remains covered in desktop, mobile, and no-JavaScript acceptance tests.
+
 ## Automated checks
 
 - `npm run lint`: passes with zero warnings.

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import {
   ArrowDown,
   ArrowDownRight,
@@ -138,7 +137,7 @@ export default function Home() {
         <div className="projects-grid">
           {projects.map((project, index) => (
             <Reveal key={project.slug} delay={index * 0.1}>
-              <Link
+              <a
                 className={`project-card project-${project.slug}`}
                 href={`/projects/${project.slug}/`}
               >
@@ -164,7 +163,7 @@ export default function Home() {
                     <ArrowUpRight size={16} />
                   </span>
                 </div>
-              </Link>
+              </a>
             </Reveal>
           ))}
         </div>
@@ -253,7 +252,7 @@ export default function Home() {
         <div className="achievement-list">
           {projects.map((project, index) => (
             <Reveal key={project.slug}>
-              <Link
+              <a
                 href={`/projects/${project.slug}/`}
                 className="achievement-row"
               >
@@ -274,7 +273,7 @@ export default function Home() {
                   {project.name}
                   <ArrowUpRight size={20} />
                 </span>
-              </Link>
+              </a>
             </Reveal>
           ))}
         </div>
